@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Satisfaction Survey</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Customer Satisfaction Survey</h1>
+  <div id="content">
+    
+    <!-- Survey Form -->
+    <h2>Rate Your Experience</h2>
+    <form id="surveyForm">
+      <label for="customerType">Customer Type:</label>
+      <select id="customerType">
+        <option value="Loyal">Loyal</option>
+        <option value="Disloyal">Disloyal</option>
+      </select>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" min="1" required>
+      
+      
+      <label for="typeOfTravel">Type of Travel:</label>
+      <select id="typeOfTravel">
+        <option value="Business Travel">Business Travel</option>
+        <option value="Personal Travel">Personal Travel</option>
+      </select>
+      
+      <label for="class">Class:</label>
+      <select id="class">
+        <option value="Eco">Eco</option>
+        <option value="Eco Plus">Eco Plus</option>
+        <option value="Business">Business</option>
+      </select>
+      
+
+      <h3>Satisfaction Ratings (1 = Not satisfied, 5 = Satisfied)</h3>
+
+      <label for="seatComfort">Seat Comfort:</label>
+      <input type="number" id="seatComfort" min="1" max="5" required>
+
+      <label for="departureArrivalTime">Departure/Arrival Time Convenience:</label>
+      <input type="number" id="departureArrivalTime" min="1" max="5" required>
+
+      <label for="foodAndDrink">Food and Drink:</label>
+      <input type="number" id="foodAndDrink" min="1" max="5" required>
+
+      <label for="gateLocation">Gate Location:</label>
+      <input type="number" id="gateLocation" min="1" max="5" required>
+
+      <label for="inflightWifi">Inflight Wifi Service:</label>
+      <input type="number" id="inflightWifi" min="1" max="5" required>
+
+      <label for="inflightEntertainment">Inflight Entertainment:</label>
+      <input type="number" id="inflightEntertainment" min="1" max="5" required>
+
+      <label for="onlineSupport">Online Support:</label>
+      <input type="number" id="onlineSupport" min="1" max="5" required>
+
+      <label for="easeOfOnlineBooking">Ease of Online Booking:</label>
+      <input type="number" id="easeOfOnlineBooking" min="1" max="5" required>
+
+      <label for="onBoardService">On-board Service:</label>
+      <input type="number" id="onBoardService" min="1" max="5" required>
+
+      <label for="legRoomService">Leg Room Service:</label>
+      <input type="number" id="legRoomService" min="1" max="5" required>
+
+      <label for="baggageHandling">Baggage Handling:</label>
+      <input type="number" id="baggageHandling" min="1" max="5" required>
+
+      <label for="checkinService">Checkin Service:</label>
+      <input type="number" id="checkinService" min="1" max="5" required>
+
+      <label for="cleanliness">Cleanliness:</label>
+      <input type="number" id="cleanliness" min="1" max="5" required>
+
+      <label for="onlineBoarding">Online Boarding:</label>
+      <input type="number" id="onlineBoarding" min="1" max="5" required>
+
+      <button type="submit">Submit Survey</button>
+    </form>
+
+    <div id="responseMessage"></div>
+
+   <!-- Dropdown to Select Attribute for Pie Chart -->
+<h2>Select an Attribute for Analysis</h2>
+<label for="chartAttribute">Choose Attribute:</label>
+<select id="chartAttribute">
+  <option value="customerType">Customer Type</option>
+  <option value="seatComfort">Seat Comfort</option>
+  <option value="departureArrivalTime">Departure/Arrival Time</option>
+  <option value="foodAndDrink">Food and Drink</option>
+  <option value="gateLocation">Gate Location</option>
+  <option value="inflightWifi">Inflight Wifi Service</option>
+  <option value="inflightEntertainment">Inflight Entertainment</option>
+  <option value="onlineSupport">Online Support</option>
+  <option value="easeOfOnlineBooking">Ease of Online Booking</option>
+  <option value="onBoardService">On-board Service</option>
+  <option value="legRoomService">Leg Room Service</option>
+  <option value="baggageHandling">Baggage Handling</option>
+  <option value="checkinService">Checkin Service</option>
+  <option value="cleanliness">Cleanliness</option>
+  <option value="onlineBoarding">Online Boarding</option>
+</select>
+
+   <!-- Four Pie Charts for Age, Customer Type, Type of Travel, and Class -->
+<div id="chartsContainer" style="display: flex; justify-content: space-between;">
+    <div style="width: 22%;">
+      <h2>Age</h2>
+      <canvas id="agePieChart" width="400" height="200"></canvas>
+    </div>
+    <div style="width: 22%;">
+      <h2>Customer Type</h2>
+      <canvas id="customerTypePieChart" width="400" height="200"></canvas>
+    </div>
+    <div style="width: 22%;">
+      <h2>Type of Travel</h2>
+      <canvas id="typeOfTravelPieChart" width="400" height="200"></canvas>
+    </div>
+    <div style="width: 22%;">
+      <h2>Class</h2>
+      <canvas id="classPieChart" width="400" height="200"></canvas>
+    </div>
+  </div>
+  
+    <!-- Overall Results Below -->
+    <h2>Overall Results</h2>
+    <canvas id="overallResultsChart" width="400" height="200"></canvas>
+
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

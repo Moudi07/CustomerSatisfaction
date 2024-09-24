@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <div id="chartsContainer">
+    <!-- Display charts and data for analysis -->
+    <div id="surveyData">
+      <h2>Survey Data</h2>
+      <table id="surveyTable">
+        <!-- Table content will be dynamically loaded -->
+      </table>
+    </div>
+    <div id="predictionsChart">
+      <h2>Predicted Satisfaction Levels</h2>
+      <canvas id="predictionChart" width="400" height="200"></canvas>
+    </div>
+  </div>
+  <button id="runModel">Run AI Model</button>
+  <script src="scripts.js"></script>
+</body>
+</html>
